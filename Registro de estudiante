@@ -1,0 +1,31 @@
+# Clase Estudiante
+class Estudiante:
+    
+    # Constructor
+    def __init__(self, nombre, edad, calificacion):
+        self.nombre = nombre
+        self.edad = edad
+        self.calificacion = calificacion
+
+    # Método para mostrar la información del estudiante
+    def mostrar_info(self):
+        print("Nombre:", self.nombre)
+        print("Edad:", self.edad)
+        print("Calificación:", self.calificacion)
+
+    # Método para verificar si aprobó o reprobó
+    def verificar_aprobacion(self):
+        if self.calificacion >= 3.0:   # puedes cambiar la nota mínima si tu profesor usa otra
+            print(self.nombre, "aprobó la materia.")
+        else:
+            print(self.nombre, "reprobó la materia.")
+
+
+# Crear un objeto de la clase Estudiante
+est1 = Estudiante("Mateo parra", 18 , 4.2)
+
+# Mostrar información
+est1.mostrar_info()
+
+# Verificar si aprobó o no
+est1.verificar_aprobacion()
