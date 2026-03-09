@@ -1,0 +1,45 @@
+# Clase Producto
+class Producto:
+
+    def __init__(self, nombre, precio, stock):
+        self.nombre = nombre
+        self.precio = precio
+        self.stock = stock
+
+    # Verificar si hay suficiente stock
+    def verificar_disponibilidad(self, cantidad):
+        if self.stock >= cantidad:
+            print(f"Sí hay {cantidad} unidades disponibles de {self.nombre}.")
+            return True
+        else:
+            print(f"No hay suficientes unidades de {self.nombre}. Stock actual: {self.stock}")
+            return False
+
+    # Vender producto
+    def vender(self, cantidad):
+        if self.stock >= cantidad:
+            self.stock -= cantidad
+            print(f"Se vendieron {cantidad} unidades de {self.nombre}. Stock restante: {self.stock}")
+        else:
+            print("No se puede realizar la venta. Falta de stock.")
+
+    # Reabastecer producto
+    def reabastecer(self, cantidad):
+        self.stock += cantidad
+        print(f"Se agregaron {cantidad} unidades. Nuevo stock: {self.stock}")
+
+
+# Crear el objeto Producto
+producto1 = Producto("Laptop", 1200, 10)
+
+# Operaciones solicitadas
+producto1.verificar_disponibilidad(5)
+producto1.vender(3)
+
+producto1.verificar_disponibilidad(8)
+producto1.vender(8)  # debe fallar
+
+producto1.reabastecer(10)
+
+producto1.verificar_disponibilidad(8)
+producto1.vender(8)
