@@ -1,0 +1,31 @@
+# Clase Libro
+class Libro:
+    # Constructor
+    def __init__(self, titulo, autor, numero_paginas):
+        self.titulo = titulo
+        self.autor = autor
+        self.numero_paginas = numero_paginas
+
+    # Método para mostrar la información del libro
+    def mostrar_info(self):
+        print("Título:", self.titulo)
+        print("Autor:", self.autor)
+        print("Número de páginas:", self.numero_paginas)
+
+    # Método para actualizar el número de páginas
+    def actualizar_paginas(self, nuevas_paginas):
+        self.numero_paginas = nuevas_paginas
+        print("El número de páginas ha sido actualizado.")
+
+# Crear un objeto de la clase Libro
+libro1 = Libro("Cien años de soledad", "Gabriel García Márquez", 417)
+
+# Mostrar información del libro
+libro1.mostrar_info()
+
+# Actualizar el número de páginas
+libro1.actualizar_paginas(420)
+
+# Mostrar la información actualizada
+print("\nInformación actualizada:")
+libro1.mostrar_info()
